@@ -195,7 +195,7 @@
 		menuItems.forEach((category, index) => {
 			const isActive = index === 0 ? 'active' : '';
 			const tabHeaderHtml = `
-				<li class="mb-3"><a href="#tabs-${index + 1}"><img style="width: 2rem; height: 2rem;" src="${category.icon}" alt="">${category.category}</a></li>
+				<li class="mb-3"><a href="#tabs-${index + 1}"><img class="icon-tab" style="width: 3rem; height: 3rem;" src="${category.icon}" alt="">${category.category}</a></li>
 			`;
 			tabHeaderContainer.append(tabHeaderHtml);
 		});

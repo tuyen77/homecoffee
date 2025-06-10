@@ -1324,7 +1324,10 @@ reservation
 #reservation .section-heading h6:before {
   background-color: #fff;
 }
-
+.icon-tab:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
 .blur {
   position: absolute;
   top: 0;
