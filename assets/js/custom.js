@@ -8,7 +8,7 @@
 			category: "Cà phê",
 			icon: "assets/images/coffee-icon.svg",
 			items: [
-				{ name: "Home phê đen ĐÁ/nóng", price: "22K", image: "assets/images/menu-item-01.jpg" },
+				{ name: "Home phê đen", price: "22K", image: "assets/images/menu-item-01.jpg" },
 				{ name: "Home phê sữa", price: "25K", image: "assets/images/menu-item-02.jpg" },
 				{ name: "Home phê muối", price: "28K", image: "assets/images/menu-item-03.jpg" },
 				{ name: "HOME BẠC XỈU", price: "25K", image: "assets/images/menu-item-04.jpg" }
@@ -134,6 +134,7 @@
 	// Hàm render carousel
 	function renderCarousel() {
 		const carouselItems = getCarouselItems();
+		console.log(carouselItems);
 		const carouselContainer = $('#owl-menu-item');
 		
 		// Xóa nội dung hiện tại
@@ -141,7 +142,7 @@
 		
 		// Thêm các mục mới
 		carouselItems.forEach((item, index) => {
-			const cardClass = `card${(index % 5) + 1}`; // Sử dụng 5 loại card từ card1 đến card5
+			const cardClass = `card${(index % 6) + 1}`; // Sửa từ 5 thành 6 để có 6 loại card từ card1 đến card6
 			
 			const itemHtml = `
 				<div class="item">
@@ -169,7 +170,7 @@
 			loop: true,
 			dots: true,
 			nav: true,
-			autoplay: true,
+			autoplay: false,
 			margin: 30,
 			responsive: {
 				0: {
