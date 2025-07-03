@@ -1321,6 +1321,307 @@ chefs
 
 /* 
 ---------------------------------------------
+event
+--------------------------------------------- 
+*/
+
+#event {
+  margin-top: 20px;
+  padding: 100px 0px 0px 0px;
+  position: relative;
+  z-index: 9;
+}
+
+#event .left-text-content h2 {
+  font-family: none;
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#event .header {
+  background: linear-gradient(45deg, #6f4e37, #8b4513);
+  color: white;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#event .header::before {
+  content: "☕";
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 40px;
+  opacity: 0.3;
+}
+
+#event .header::after {
+  content: "☕";
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 40px;
+  opacity: 0.3;
+}
+
+#event .header h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#event .emoji {
+  font-size: 1.5em;
+  margin: 0 5px;
+}
+
+#event .location-info {
+  background: #f5e8d6;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  border-left: 5px solid #8b4513;
+}
+
+#event .location-info p {
+  margin: 10px 0;
+  font-size: 1.1em;
+  color: #5d4037;
+}
+
+#event .location-info strong {
+  color: #5d2a0c;
+}
+
+#event .main-content {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#event .main-content p {
+  font-size: 1.2em;
+  color: #5d4037;
+  margin-bottom: 20px;
+}
+
+#event .qr-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+} 
+
+#event .qr-container img {
+  width: 100%;
+  object-fit: contain;
+}
+
+#event .qr-container .qrzl {
+  width: 50%;
+}
+
+#event .qr-container .qrfb {
+  width: 50%;
+}
+
+
+#event .program-title {
+  background: linear-gradient(45deg, #e5ff0a, #ff8e53);
+  color: #c24242;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 20px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#event .cta p {
+  color: #fff;
+  font-size: 17px;
+}
+
+#event .how-to-join {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  background: #e6d2b5;
+  padding: 25px;
+  border-radius: 15px;
+  margin: 30px 0;
+}
+
+#event .how-to-join-group-left {
+  width: 50%;
+}
+
+#event .how-to-join-group-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+#event > .how-to-join img{ 
+  width: 50%;
+  object-fit: cover;
+}
+
+#event .how-to-join h3 {
+  color: #5d2a0c;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#event .steps {
+  list-style: none;
+  padding: 0;
+}
+
+#event .steps li {
+  background: #f8f1e7;
+  margin: 15px 0;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(139, 69, 19, 0.2);
+  font-size: 1.1em;
+  border-left: 4px solid #8b4513;
+  color: #5d4037;
+}
+
+#event .highlight {
+  background: #d7bfa2;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 25px 0;
+  text-align: center;
+  border: 2px solid #6f4e37;
+}
+
+#event .highlight h3 {
+  color: #5d2a0c;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+#event .cta {
+  background: linear-gradient(45deg, #8b4513, #a0522d);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 25px 0;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#event .image-gallery {
+  display: flex;
+  gap: 20px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+#event .image-placeholder {
+  flex: 1;
+  min-width: 300px;
+  aspect-ratio: 4.5/3;
+  background: linear-gradient(135deg, #deb887, #f5deb3);
+  border: 3px dashed #8b4513;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #5d2a0c;
+  font-size: 1.1em;
+  text-align: center;
+  padding: 5px;
+  transition: all 0.3s ease;
+}
+
+#event .image-placeholder:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(139, 69, 19, 0.2);
+}
+
+#event .image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+#event .qr-section {
+  background: #f5e8d6;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#event .qr-section p {
+  font-size: 1.1em;
+  color: #5d4037;
+}
+
+@media (max-width: 768px) {
+  #event .how-to-join-group-left {
+    width: 100%;
+  }
+  #event .how-to-join-group-right {
+    width: 100%;
+  }
+  #event .how-to-join {
+    flex-direction: column;
+  }
+  #event .container {
+    margin: 10px;
+    border-radius: 15px;
+  }
+
+  #event .content {
+    padding: 20px;
+  }
+
+  #event .header h1 {
+    font-size: 1.8em;
+  }
+
+  #event .image-gallery {
+    flex-direction: column;
+  }
+
+  #event .image-placeholder {
+    min-width: 100%;
+  }
+}
+
+#event .pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 
+---------------------------------------------
 reservation
 --------------------------------------------- 
 */
@@ -1682,7 +1983,7 @@ offers
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 30px;
   color: var(--accent-color);
@@ -1699,22 +2000,22 @@ offers
 
 .shift-container {
   background-color: var(--primary-light);
-  padding: 30px;
   margin-bottom: 30px;
   border-left: 5px solid var(--accent-color);
+  display: flex;
+  justify-content: space-between;
 }
 
 .shift-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 15px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 1.1rem;
+  width: 33%;
+  text-align: center;
 }
 
 .shift-item:last-child {
-  border-bottom: none;
+  border-right: none;
 }
 
 .shift-name {
@@ -1728,32 +2029,15 @@ offers
 
 .salary-container {
   background-color: var(--primary-dark);
-  padding: 30px;
+  padding: 10px;
   margin-bottom: 30px;
   border: 2px solid var(--accent-color);
-}
-
-.salary-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.salary-type {
-  color: var(--accent-color);
-}
-
-.salary-amount {
-  color: #fff;
-  font-size: 1.3rem;
+  text-align: center;
 }
 
 .requirements-container {
   background-color: rgba(255, 255, 255, 0.05);
-  padding: 30px;
+  padding: 10px;
   margin-bottom: 30px;
 }
 
@@ -1764,9 +2048,8 @@ offers
 }
 
 .requirement-item {
-  display: flex;
-  align-items: center;
-  padding: 15px;
+  text-align: center;
+  padding: 10px;
   background-color: rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }

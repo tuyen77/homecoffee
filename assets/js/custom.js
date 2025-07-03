@@ -339,25 +339,43 @@
     },
   ];
 
-  // Hàm để lấy 6 sản phẩm đầu tiên cho carousel
+  // Danh sách các sản phẩm cho carousel
+  const carouselItems = [
+    {
+      name: "Home phê đen",
+      price: "22K",
+      image: "assets/images/menu-item-01.jpg",
+    },
+    {
+      name: "Home phê sữa",
+      price: "25K",
+      image: "assets/images/menu-item-02.jpg",
+    },
+    {
+      name: "Home phê muối",
+      price: "28K",
+      image: "assets/images/menu-item-03.jpg",
+    },
+    {
+      name: "Matcha đá xay",
+      price: "35K",
+      image: "assets/images/menu-item-05.jpg",
+    },
+    {
+      name: "Dừa tươi",
+      price: "30K",
+      image: "assets/images/menu-item-47.jpg",
+    },
+    {
+      name: "Cookie đá xay",
+      price: "35K",
+      image: "assets/images/menu-item-06.jpg",
+    },
+  ];
+
+  // Hàm để lấy sản phẩm cho carousel
   function getCarouselItems() {
-    // Lấy 6 sản phẩm đầu tiên từ các danh mục
-    let items = [];
-    let count = 0;
-
-    for (let category of menuItems) {
-      for (let item of category.items) {
-        if (count < 6) {
-          items.push(item);
-          count++;
-        } else {
-          break;
-        }
-      }
-      if (count >= 6) break;
-    }
-
-    return items;
+    return carouselItems;
   }
 
   // Hàm render carousel
@@ -371,11 +389,10 @@
 
     // Thêm các mục mới
     carouselItems.forEach((item, index) => {
-      const cardClass = `card${(index % 6) + 1}`; // Sửa từ 5 thành 6 để có 6 loại card từ card1 đến card6
 
       const itemHtml = `
 				<div class="item">
-					<div class="card ${cardClass}">
+					<div style="background-image: url(${item.image});" class="card">
 						<div class="price">
 							<h6>${item.price}</h6>
 						</div>
