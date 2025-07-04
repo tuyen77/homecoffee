@@ -96,7 +96,7 @@
       icon: "assets/images/trasua.svg",
       items: [
         {
-          name: "HOME trà sữa",
+          name: "Home trà sữa",
           price: "30K",
           image: "assets/images/menu-item-15.jpg",
         },
@@ -111,7 +111,7 @@
           image: "assets/images/menu-item-17.jpg",
         },
         {
-          name: "Trà đào",
+          name: "Home trà đào cam sả",
           price: "30K",
           image: "assets/images/menu-item-18.jpg",
         },
@@ -357,19 +357,19 @@
       image: "assets/images/menu-item-03.jpg",
     },
     {
-      name: "Matcha đá xay",
+      name: "Home matcha latte",
       price: "35K",
-      image: "assets/images/menu-item-05.jpg",
+      image: "assets/images/menu-item-10.jpg",
     },
     {
-      name: "Dừa tươi",
+      name: "Home dừa tươi",
       price: "30K",
       image: "assets/images/menu-item-47.jpg",
     },
     {
-      name: "Cookie đá xay",
-      price: "35K",
-      image: "assets/images/menu-item-06.jpg",
+      name: "Home trà đào cam sả",
+      price: "30K",
+      image: "assets/images/menu-item-18.jpg",
     },
   ];
 
@@ -504,7 +504,7 @@
     }
   });
 
-  $(".input-group.date").datepicker({ format: "dd.mm.yyyy" });
+  // $(".input-group.date").datepicker({ format: "dd.mm.yyyy" });
 
   $(".filters ul li").click(function () {
     $(".filters ul li").removeClass("active");
@@ -516,13 +516,13 @@
     });
   });
 
-  var $grid = $(".grid").isotope({
-    itemSelector: ".all",
-    percentPosition: true,
-    masonry: {
-      columnWidth: ".all",
-    },
-  });
+  // var $grid = $(".grid").isotope({
+  //   itemSelector: ".all",
+  //   percentPosition: true,
+  //   masonry: {
+  //     columnWidth: ".all",
+  //   },
+  // });
 
   $(".Modern-Slider").slick({
     autoplay: true,
@@ -565,7 +565,7 @@
   mobileNav();
 
   // Scroll animation init
-  window.sr = new scrollReveal();
+  // window.sr = new scrollReveal();
 
   // Menu Dropdown Toggle
   if ($(".menu-trigger").length) {

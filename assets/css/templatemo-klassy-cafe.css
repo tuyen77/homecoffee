@@ -37,7 +37,7 @@ font & reset css
   --accent-color: #d4a574;
   --text-light: rgba(255, 255, 255, 0.9);
 }
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500");
 
 @font-face {
   font-family: "VPS AnLocHoa";
@@ -1020,6 +1020,10 @@ video {
   opacity: 1;
 }
 
+.video2 {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .play-overlay {
     width: 60px;
@@ -1028,6 +1032,10 @@ video {
 
   .play-overlay span {
     font-size: 20px;
+  }
+
+  .video2 {
+    display: block;
   }
 }
 
@@ -1581,14 +1589,6 @@ event
   }
   #event .how-to-join {
     flex-direction: column;
-  }
-  #event .container {
-    margin: 10px;
-    border-radius: 15px;
-  }
-
-  #event .content {
-    padding: 20px;
   }
 
   #event .header h1 {

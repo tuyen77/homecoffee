@@ -1,9 +1,9 @@
 class CustomVideoPlayer {
     constructor() {
-        this.video = document.getElementById('customVideo');
-        this.container = document.getElementById('videoContainer');
-        this.playOverlay = document.getElementById('playOverlay');
-        this.loadingSpinner = document.getElementById('loadingSpinner');
+        this.videos = document.getElementsByClassName('customVideo');
+        this.containers = document.getElementsByClassName('video-container');
+        this.playOverlays = document.getElementsByClassName('play-overlay');
+        this.loadingSpinners = document.getElementsByClassName('loading-spinner');
         
         this.init();
     }
@@ -13,42 +13,56 @@ class CustomVideoPlayer {
     }
     
     addEventListeners() {
-        // Play/Pause
-        this.playOverlay.addEventListener('click', () => this.togglePlay());
-        this.video.addEventListener('click', () => this.togglePlay());
-        
-        // Video events
-        this.video.addEventListener('play', () => this.onPlay());
-        this.video.addEventListener('pause', () => this.onPause());
-        this.video.addEventListener('waiting', () => this.showLoading());
-        this.video.addEventListener('canplay', () => this.hideLoading());
+        // Thêm event listener cho từng video
+        for (let i = 0; i < this.videos.length; i++) {
+            const video = this.videos[i];
+            const container = this.containers[i];
+            const playOverlay = this.playOverlays[i];
+            const loadingSpinner = this.loadingSpinners[i];
+            
+            // Play/Pause
+            playOverlay.addEventListener('click', () => this.togglePlay(video, container));
+            video.addEventListener('click', () => this.togglePlay(video, container));
+            
+            // Video events
+            video.addEventListener('play', () => this.onPlay(container));
+            video.addEventListener('pause', () => this.onPause(container));
+            video.addEventListener('waiting', () => this.showLoading(loadingSpinner));
+            video.addEventListener('canplay', () => this.hideLoading(loadingSpinner));
+        }
         
         // Keyboard controls
         document.addEventListener('keydown', (e) => this.handleKeyboard(e));
     }
     
-    togglePlay() {
-        if (this.video.paused) {
-            this.video.play();
+    togglePlay(video, container) {
+        if (video.paused) {
+            // Dừng tất cả các video khác trước khi phát video hiện tại
+            for (let i = 0; i < this.videos.length; i++) {
+                if (this.videos[i] !== video && !this.videos[i].paused) {
+                    this.videos[i].pause();
+                }
+            }
+            video.play();
         } else {
-            this.video.pause();
+            video.pause();
         }
     }
     
-    onPlay() {
-        this.container.classList.add('playing');
+    onPlay(container) {
+        container.classList.add('playing');
     }
     
-    onPause() {
-        this.container.classList.remove('playing');
+    onPause(container) {
+        container.classList.remove('playing');
     }
     
-    showLoading() {
-        this.loadingSpinner.style.display = 'block';
+    showLoading(loadingSpinner) {
+        loadingSpinner.style.display = 'block';
     }
     
-    hideLoading() {
-        this.loadingSpinner.style.display = 'none';
+    hideLoading(loadingSpinner) {
+        loadingSpinner.style.display = 'none';
     }
     
     handleKeyboard(e) {
@@ -57,7 +71,12 @@ class CustomVideoPlayer {
         switch(e.key) {
             case ' ':
                 e.preventDefault();
-                this.togglePlay();
+                // Chỉ phát/dừng video đầu tiên khi nhấn phím space
+                if (this.videos.length > 0) {
+                    const video = this.videos[0];
+                    const container = this.containers[0];
+                    this.togglePlay(video, container);
+                }
                 break;
         }
     }
